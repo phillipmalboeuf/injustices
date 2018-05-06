@@ -12,6 +12,7 @@
   },
   "author": "Phillip Malboeuf<phil@boeuf.coffee>",
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.1",
     "@types/react": "^16.3.4",
     "@types/react-dom": "^16.0.4",
     "@types/react-router-dom": "^4.2.6",
@@ -20,6 +21,7 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
+    "browser-cookies": "^1.2.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-router-dom": "^4.2.2",

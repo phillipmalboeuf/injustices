@@ -11,7 +11,8 @@ export const FormContext = React.createContext({
 import Model from '../models/_model'
 
 interface Props {
-  model: Model
+  model: Model,
+  cta?: string
 }
 interface State {
   values: { [key:string]: any },
@@ -56,7 +57,7 @@ export class Form extends React.Component<Props, State> {
       <FormContext.Provider value={{onChange: this.onChange.bind(this)}}>
         {this.props.children}
       </FormContext.Provider>
-      <button className='normal_top' type='submit' disabled={Object.keys(this.state.values).length === 0}>Save</button>
+      <button className='normal_top' type='submit' disabled={Object.keys(this.state.values).length === 0}>{this.props.cta || 'Save'}</button>
       {this.state.model._id && <Redirect push to={`/${this.state.model.constructor.endpoint}/${this.state.model._id}`} />}
     </form>
   }

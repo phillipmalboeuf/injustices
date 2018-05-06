@@ -31,7 +31,7 @@ export class Login extends React.Component<Props, State> {
     return <div className='hero'>
       <div className='hero__content'>
         <Link className='underline' to={`/`}>Back</Link>
-        <Form model={this.state.session}>
+        <Form model={this.state.session} cta='Login'>
           <Input label='Email Address' name='email' />
           <Input label='Password' type='password' name='password' />
         </Form>
