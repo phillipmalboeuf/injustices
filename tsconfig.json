@@ -2,7 +2,9 @@
   "compilerOptions": {
     "jsx": "react",
     "noImplicitAny": true,
+    "experimentalDecorators": true,
     "removeComments": true,
+    "allowSyntheticDefaultImports": true,
     "lib": [
       "es2017",
       "dom"

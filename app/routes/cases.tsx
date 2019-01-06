@@ -4,13 +4,14 @@ import { Link, RouteComponentProps } from 'react-router-dom'
 import { Button } from '../components/button'
 
 import Case from '../models/case'
+import { Properties } from '../models/_model'
 
 
 interface Props extends RouteComponentProps<any> {
-  cases: Case[]
+  cases: Properties[]
 }
 interface State {
-  cases: Case[]
+  cases: Properties[]
 }
 
 export class Cases extends React.Component<Props, State> {
@@ -27,15 +28,16 @@ export class Cases extends React.Component<Props, State> {
   }
 
   public render() {
+    console.log(this.state.cases)
     return <div className='hero'>
       <div className='hero__content'>
         <Link className='underline' to={`/login`}>Login</Link><br />
         <Link className='underline' to={`/people/new`}>Create new Alias</Link>
         <h1>Injustices.wiki</h1>
-        <p>Cases of ongoing privacy breaches, discrimination and abuse</p>
+        <p>Cases of ongoing privacy breaches, discrimination and abuse of authority</p>
         <ul>
         {this.state.cases.map((c)=> 
-          <li key={c._id}><Link className='underline' to={`/cases/${c._id}`}>{c.attributes.code}</Link></li>
+          <li key={c._id}><Link className='underline' to={`/cases/${c.code}`}>{c.code}</Link></li>
         )}
         </ul>
       </div>

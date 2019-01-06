@@ -6,16 +6,13 @@ import * as React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
 import { Routes } from './routes'
+import { client } from './clients/stitch'
+import { AnonymousCredential } from 'mongodb-stitch-core-sdk'
 
-const element = document.getElementById('app')
-const app = (
-  <BrowserRouter>
-    <Routes />
-  </BrowserRouter>
-)
-
-if (process.env.NODE_ENV === 'production') {
-  ReactDOM.hydrate(app, element)
-} else {
-  ReactDOM.render(app, element)
-}
+client.auth
+  .loginWithCredential(new AnonymousCredential())
+  .then(credential => 
+    ReactDOM.render(<BrowserRouter>
+      <Routes />
+    </BrowserRouter>, document.getElementById('app'))
+  )

@@ -4,19 +4,21 @@ import * as React from 'react'
 import { Redirect } from 'react-router-dom'
 
 export const FormContext = React.createContext({
-  onChange: (e: React.ChangeEvent<HTMLInputElement>):void=> 
+  // values: {} as { [key:string]: any },
+  onChange: function(name: string, value: any): void {},
 })
 
 
 import Model from '../models/_model'
 
 interface Props {
-  model: Model,
-  cta?: string
+  // model: Model,
+  cta?: string,
+  onSubmit?: (values: { [key:string]: any })=> Promise<any>
 }
 interface State {
   values: { [key:string]: any },
-  model: Model
+  // model: Model
 }
 
 export class Form extends React.Component<Props, State> {
@@ -25,17 +27,19 @@ export class Form extends React.Component<Props, State> {
     super(props)
     this.state = {
       values: {},
-      model: props.model
+      // model: props.model
     }
   }
 
   onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    this.state.model.save(this.state.values)
-      .then(model => this.setState({ 
-        values: {},
-        model: model
-      }))
+    this.props.onSubmit && this.props.onSubmit(this.state.values)
+
+    // this.state.model.save(this.state.values)
+    //   .then(model => this.setState({ 
+    //     values: {},
+    //     model: model
+    //   }))
   }
 
   onChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -58,7 +62,7 @@ export class Form extends React.Component<Props, State> {
         {this.props.children}
       </FormContext.Provider>
       <button className='normal_top' type='submit' disabled={Object.keys(this.state.values).length === 0}>{this.props.cta || 'Save'}</button>
-      {this.state.model._id && <Redirect push to={`/${this.state.model.constructor.endpoint}/${this.state.model._id}`} />}
+      {/* {this.state.model._id && <Redirect push to={`/${this.state.model.constructor.endpoint}/${this.state.model._id}`} />} */}
     </form>
   }
 }

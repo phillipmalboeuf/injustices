@@ -32,7 +32,7 @@ export class NewPeople extends React.Component<Props, State> {
     return <div className='hero'>
       <div className='hero__content'>
         <Link className='underline' to={`/`}>Back</Link>
-        <Form model={this.state.people}>
+        <Form onSubmit={values => Promise.resolve(console.log(values))}>
           <Input label='Alias' name='alias' />
           <Input label='Email Address' name='email' />
           <Input label='Password' type='password' name='password' newPassword />

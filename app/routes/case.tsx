@@ -5,15 +5,16 @@ import { Button } from '../components/button'
 
 import Case from '../models/case'
 import People from '../models/people'
+import { Properties } from '../models/_model'
 
 
 interface Props extends RouteComponentProps<any> {
-  c: Case,
-  people: People[]
+  c: Properties,
+  people: Properties[]
 }
 interface State {
-  c: Case,
-  people: People[]
+  c: Properties,
+  people: Properties[]
 }
 
 export class CaseView extends React.Component<Props, State> {
@@ -27,25 +28,24 @@ export class CaseView extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    let c = new Case({_id: this.props.match.params._id})
-    c.fetch().then(c => this.setState({ c }))
-    c.people().then(people => this.setState({ people }))
+    Case.one({ code: this.props.match.params.code }).then(c => this.setState({ c }))
+    // c.people().then(people => this.setState({ people }))
   }
 
   public render() {
     return <div className='hero'>
       <div className='hero__content'>
         <Link className='underline' to={`/`}>Back</Link>
-        {this.state.c && this.state.c.attributes && <>
-          <h1 className='small_bottom'>{this.state.c.attributes.title}</h1>
-          <h6>CASE {this.state.c.attributes.code}</h6>
+        {this.state.c && this.state.c && <>
+          <h1 className='small_bottom'>{this.state.c.title}</h1>
+          <h6>CASE {this.state.c.code}</h6>
           <ol>
-            {this.state.c && this.state.c.attributes.statements.map((statement: string, index: number)=> 
+            {this.state.c && this.state.c.statements.map((statement: string, index: number)=> 
             <li key={index} className='normal_bottom'>{statement}</li>)}
           </ol>
           <ul>
             {this.state.people.map((people)=>
-            <li key={people._id}><Link className='underline' to={`/people/${people._id}`}>{people.attributes.alias}</Link></li>)}
+            <li key={people._id}><Link className='underline' to={`/people/${people._id}`}>{people.alias}</Link></li>)}
           </ul>
         </>
         }

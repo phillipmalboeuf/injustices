@@ -12,7 +12,7 @@ import { Login } from './routes/login'
 export const Routes = ()=> <Switch>
   <Route exact path='/' component={Cases} />
   <Route exact path='/cases/new' component={NewCase} />
-  <Route exact path='/cases/:_id' component={CaseView} />
+  <Route exact path='/cases/:code' component={CaseView} />
   
   <Route exact path='/people/new' component={NewPeople} />
   <Route exact path='/people/:_id' component={PeopleView} />
