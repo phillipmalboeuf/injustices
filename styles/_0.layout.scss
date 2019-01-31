@@ -87,7 +87,7 @@ footer {
 // #MIXINS
 
 .max_width {
-  max-width: $max_width/2;
+  max-width: $max_width;
 
   &.max_width--center {
     margin-right: auto;
@@ -95,7 +95,7 @@ footer {
   }
 
   &.max_width--big {
-    max-width: $max_width/1.5;
+    max-width: $max_width*2;
   }
 }
 
@@ -110,12 +110,24 @@ footer {
     padding: $vertical_rythm*1.5 $vertical_rythm/2;
   }
 
+  &.padded--thick {
+    padding: $vertical_rythm*4;
+
+    @media #{$tablet_portrait} {
+      padding: $vertical_rythm*3 $vertical_rythm*1.5;
+    }
+
+    @media #{$phone} {
+      padding: $vertical_rythm*1.5 $vertical_rythm;
+    }
+  }
+
   &.padded--tight {
-    padding: $vertical_rythm/2;
+    padding: $vertical_rythm $vertical_rythm*2;
   }
 
   &.padded--big_top {
-    padding-top: $vertical_rythm*6;
+    padding-top: $vertical_rythm*8;
   }
 
   &.padded--flat_top {

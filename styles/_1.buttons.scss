@@ -12,7 +12,7 @@ button {
   text-align: center;
 
   background: $white;
-  padding: 0 $vertical_rythm;
+  padding: $vertical_rythm/1.5 $vertical_rythm*2;
   line-height: $vertical_rythm*1.5;
   border: 1px solid $grey--dark;
   border-radius: $border_radius;

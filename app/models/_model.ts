@@ -22,7 +22,6 @@ export default class Model {
   }
 
   static postprocess(data: any): Promise<any> {
-    console.log(data)
     return Promise.resolve(data)
   }
 
@@ -32,7 +31,6 @@ export default class Model {
   }
 
   static one(filters: Filters): Promise<any> {
-    console.log(filters)
     return db.collection(this.collection).find(filters)
       .iterator()
       .then(cursor => cursor.next().then((model: Properties)=> this.postprocess(model)))

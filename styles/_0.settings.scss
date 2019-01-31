@@ -17,7 +17,7 @@ $green: #14AF6E;
 
 $body_font: 'Untitled Serif Test', serif;
 $headings_font: $body_font;
-$alternate_font: $body_font;
+$alternate_font: 'HK Grotesk Pro', sans-serif;
 
 $thin_weight: 300;
 $normal_weight: 400;
@@ -30,12 +30,12 @@ $base: 20;
 $base_size: ($base) * 1px;
 $massive_size: (88/$base) * 1rem;
 $big_size: (52/$base) * 1rem;
-$medium_size: (24/$base) * 1rem;
+$medium_size: (28/$base) * 1rem;
 $slight_size: (20/$base) * 1rem;
 $small_size: (18/$base) * 1rem;
 
 $vertical_rythm: 1rem;
-$max_width: 1666px;
+$max_width: 33rem;
 $letter_spacing: 0.01em;
 $border_radius: 3px;
 $checkbox_size: 1.5em;

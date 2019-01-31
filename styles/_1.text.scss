@@ -4,6 +4,8 @@
 html {
   font: #{$base_size}/#{$vertical_rythm*1.66} $body_font;
   font-weight: $normal_weight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -22,7 +24,7 @@ main {
 
 // #HEADINGS
 
-.h1, h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $headings_font;
   font-weight: $bold_weight;
   line-height: $vertical_rythm;
@@ -51,8 +53,7 @@ main {
   }
 }
 
-  h1,
-  .h1 {
+  h1 {
     font-size: $big_size;
     line-height: $vertical_rythm*2;
 
@@ -73,7 +74,7 @@ main {
 
   h2 {
     font-size: $big_size;
-    line-height: $vertical_rythm*2;
+    line-height: $vertical_rythm*2.5;
 
     @media #{$tablet_portrait} {
       font-size: $big_size*0.8;
@@ -83,6 +84,7 @@ main {
 
   h3 {
     font-size: $medium_size;
+    line-height: $vertical_rythm*1.5;
   }
 
   h4 {
@@ -125,10 +127,14 @@ a {
   &:hover,
   &.a--focus {
     color: $black--dark;
+
+    .black_back & {
+      color: $grey--light;
+    }
   }
 
   &:active {
-    // top: 1px;
+    top: 1px;
   }
 
   &.a--anchor {
@@ -230,7 +236,7 @@ sub {
 // #BACKGROUNDS
 
 .white_back { background-color: $white; }
-.black_back { background-color: $black; }
+.black_back { background-color: $black; color: $white; }
 .green_back { background-color: $green; }
 .grey_back { background-color: $grey; }
 .light_grey_back { background-color: $grey--light; }
