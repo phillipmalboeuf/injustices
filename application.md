@@ -1,7 +1,7 @@
 
 #TEAM
 ##What is the name, role, and best email address of each founder on your team? *
-Phillip Malboeuf (Founder, Product Designer, Developer) phil@phils.computer
+Phillip Malboeuf (Founder, Developer) phil@phils.computer
 
 ##Where are each of you located? *
 Montréal, Québec, Canada
@@ -56,19 +56,23 @@ No revenue, only a prototype.
 
 #MARKET
 ##What is your unfair advantage? *
-
+My unfair advantage is that I don't have an agenda, I'm not emotionnaly invested. I want to this for me to be able to give back.
 
 ##What do you understand about the industry you’re selling to that few others do? *
-
+I understand the practices of anonimity on the internet and I'm also a well-versed user experience designer. Having a combination of those two skills is rare. I understand that there's a revolution underway, that trust in the established order is crumbling.
 
 ##If you could snap your fingers and add 3 businesses to your customer list, who would they be and why? *
+https://inequality.org/
+http://www.injusticeanywhere.org/
 
 ##Who is the ideal customer for your product? *
-
+My ideal customer is studious and diligent, unafraid, and has suffered greatly at the hands of those above her.
 
 ##How many businesses are in your target market? *
 
 
 ##Who are your competitors? Of your competitors, who do you fear the most? Whom do you fear the least? *
+Reddit
 
 ##What has changed such that right now is a good time for your business? *
+The public is done tolerating injustices and it's asking itself what it can do to make a difference, to be a contributor instead of consumer. Authority is no longer above questioning and I'd like to build a platform that enables just that.
