@@ -3,5 +3,6 @@
 /.cache
 /dist
 /_ignore
+package-lock.json
 npm-debug.log
 secret.json
