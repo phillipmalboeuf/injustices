@@ -29,7 +29,7 @@ export class Landing extends React.Component<Props, State> {
   public render() {
     return <>
       <div className='black_back padded padded--thick padded--big_top padded--flat_bottom text_center'>
-        <h1 style={{ fontSize: '13vw', lineHeight: 1 }}>injustices.wiki</h1>
+        <h1><Overlaps size='13vw'>injustices.wiki</Overlaps></h1>
       </div>
 
       <div className='padded padded--thick'>
@@ -47,10 +47,10 @@ export class Landing extends React.Component<Props, State> {
         </div>
       </div>
 
-      <div className='padded padded--thick black_back' id='1'>
+      <div className='padded padded--thick relative black_back' id='1'>
         <div className='grid grid--guttered grid--bottom'>
           <div className='col col--2of12'>
-            <h1 className='alternate' style={{ fontSize: '13vw', lineHeight: 1 }}>1</h1>
+            <Overlaps size='20vw' position={{ bottom: 0, left: '2rem' }}>1</Overlaps>
           </div>
           <div className='col col--3of12'>
             <h2>Read and classify cases</h2>
@@ -61,10 +61,10 @@ export class Landing extends React.Component<Props, State> {
         </div>
       </div>
 
-      <div className='padded padded--thick' id='2'>
+      <div className='padded padded--thick relative' id='2'>
         <div className='grid grid--guttered grid--bottom'>
           <div className='col col--2of12'>
-            <h1 className='alternate' style={{ fontSize: '13vw', lineHeight: 1 }}>2</h1>
+            <Overlaps size='20vw' position={{ bottom: 0, left: '2rem' }}>2</Overlaps>
           </div>
           <div className='col col--3of12'>
             <h2>Contribute to a case</h2>
@@ -75,10 +75,10 @@ export class Landing extends React.Component<Props, State> {
         </div>
       </div>
 
-      <div className='padded padded--thick black_back' id='3'>
+      <div className='padded padded--thick relative black_back' id='3'>
         <div className='grid grid--guttered grid--bottom'>
           <div className='col col--2of12'>
-            <h1 className='alternate' style={{ fontSize: '13vw', lineHeight: 1 }}>3</h1>
+            <Overlaps size='20vw' position={{ bottom: 0, left: '2rem' }}>3</Overlaps>
           </div>
           <div className='col col--3of12'>
             <h2>Open a case yourself</h2>
@@ -89,10 +89,24 @@ export class Landing extends React.Component<Props, State> {
         </div>
       </div>
 
-      <div className='padded padded--thick text_center'>
-        <h1 className='alternate' style={{ fontSize: '13vw', lineHeight: 1 }}>& Finally</h1>
+      <div className='padded padded--thick text_center relative'>
+        <Overlaps size='18vw' position={{ bottom: 0, left: 0, width: '100%' }}>Finally</Overlaps>
         <Button label={'Get involved'} />
       </div>
     </>
   }
+}
+
+interface OverlapsProps {
+  size: string,
+  position?: { top?: string | number, right?: string | number, bottom?: string | number, left?: string | number, width?: string }
+}
+
+const Overlaps: React.SFC<OverlapsProps> = (props) => {
+  return <em style={{
+    fontSize: props.size,
+    textDecoration: 'underline',
+    lineHeight: 1,
+    ...(props.position ? { position: 'absolute', ...props.position } : {})
+  }}>{props.children}</em>
 }

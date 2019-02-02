@@ -43,9 +43,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   em, i {
+    font-family: $body_font;
     font-style: normal;
     text-decoration: underline;
-    text-decoration-skip: ink;
   }
 
   small {
@@ -288,7 +288,8 @@ em strong {
 
 em,
 .em {
-  font-style: italic;
+  font-style: normal;
+  font-family: $alternate_font;
 }
 
 .thin { font-weight: $thin_weight; }
@@ -298,12 +299,8 @@ em,
 .underline { text-decoration: underline; }
 .strike { text-decoration: line-through; }
 
-.no-wrap {
+.nowrap {
   white-space: nowrap;
-}
-
-.spaced {
-  margin: 0 1em;
 }
 
 .rounded { border-radius: $border_radius; }
