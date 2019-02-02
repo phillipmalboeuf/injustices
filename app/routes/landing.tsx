@@ -52,7 +52,7 @@ export class Landing extends React.Component<Props, State> {
           <div className='col col--2of12'>
             <Overlaps size='20vw' position={{ bottom: 0, left: '2rem' }}>1</Overlaps>
           </div>
-          <div className='col col--3of12'>
+          <div className='col col--3of12 col--phone--12of12'>
             <h2>Read and classify cases</h2>
             <p>Awareness goes a long way. We're here to bring to light and study injustices.</p>
             <p>We’ll need help with the tagging, the pushing forward, and pulling down of cases.</p>
@@ -66,7 +66,7 @@ export class Landing extends React.Component<Props, State> {
           <div className='col col--2of12'>
             <Overlaps size='20vw' position={{ bottom: 0, left: '2rem' }}>2</Overlaps>
           </div>
-          <div className='col col--3of12'>
+          <div className='col col--3of12 col--phone--12of12'>
             <h2>Contribute to a case</h2>
             <p>Donate anything. Any amount of your time, your resources, or even your funds may pull someone out of a dire situation.</p>
             <p>We, the small, have to opportunity to both provide and receive help.</p>
@@ -80,7 +80,7 @@ export class Landing extends React.Component<Props, State> {
           <div className='col col--2of12'>
             <Overlaps size='20vw' position={{ bottom: 0, left: '2rem' }}>3</Overlaps>
           </div>
-          <div className='col col--3of12'>
+          <div className='col col--3of12 col--phone--12of12'>
             <h2>Open a case yourself</h2>
             <p>This is a safe place to speak up. We’ll provide any level of anonimity you need. We’re here to remove fear paralysis.</p>
             <p>Start with the beginning and build on it as you go, there’s no such thing as a complete or perfect case.</p>
