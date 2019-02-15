@@ -10,7 +10,7 @@ Montréal, Québec, Canada
 Definitely part-time, I'm a full-time freelance web developer for SMEs at the moment.
 
 ##Who writes the code for your product? *
-I do, but open to and has access to outsourcing for certain aspects.
+I do, but I'm open to and I have access to outsourcing for certain parts of it.
 
 #COMPANY
 ##Have you taken prior funding? If so, how much and what structure (convertible note, priced round, etc.)? *
@@ -24,10 +24,10 @@ No prior funding, earlier stage than that I'm afraid.
 
 #TRACTION
 ##If you are pre-launch, list any “traction” such as number of subscribers on an email launch list, number of pre-purchases (including price), etc. *
-No traction as such.
+No traction as such. If you already find that I'm too early stage, I'm okay with that and I'll keep working on things:)
 
 ##What is the URL of your marketing website? (if any)
-https://injustices.wiki
+It's still very much a work in progress, but here's what I have so far: https://injustices.wiki
 
 ##How about any company social accounts? Only if they are worth checking out.
 -
@@ -37,7 +37,7 @@ https://injustices.wiki
 
 ##Answer the following if you have revenue:
 ##What is your monthly recurring revenue (MRR)?
-No revenue, only a prototype.
+No revenue, I do have a micro-donation-based revenue model that I'd love to discuss with you.
 
 ##What is your monthly growth rate for the past 12 months (%)?
 -
@@ -56,23 +56,25 @@ No revenue, only a prototype.
 
 #MARKET
 ##What is your unfair advantage? *
-My unfair advantage is that I don't have an agenda, I'm not emotionnaly invested. I want to this for me to be able to give back.
+My unfair advantage is that I don't have an agenda, I'm not emotionnaly or politically invested. I want to this for me to be able to give back. I perform all work in the spirit of service.
 
 ##What do you understand about the industry you’re selling to that few others do? *
 I understand the practices of anonimity on the internet and I'm also a well-versed user experience designer. Having a combination of those two skills is rare. I understand that there's a revolution underway, that trust in the established order is crumbling.
 
 ##If you could snap your fingers and add 3 businesses to your customer list, who would they be and why? *
+http://www.injusticeanywhere.org/ (https://freeross.org/)
+https://openmedia.org/
 https://inequality.org/
-http://www.injusticeanywhere.org/
 
 ##Who is the ideal customer for your product? *
 My ideal customer is studious and diligent, unafraid, and has suffered greatly at the hands of those above her.
 
 ##How many businesses are in your target market? *
-
+Sorry, I'm honestly uncertain as to how to proceed to evaluate that market.
 
 ##Who are your competitors? Of your competitors, who do you fear the most? Whom do you fear the least? *
-Reddit
+Reddit (https://www.reddit.com/r/JusticeServed/)
+News sites
 
 ##What has changed such that right now is a good time for your business? *
-The public is done tolerating injustices and it's asking itself what it can do to make a difference, to be a contributor instead of consumer. Authority is no longer above questioning and I'd like to build a platform that enables just that.
+The public is done tolerating injustices and it's asking itself what it can do to make a difference, to be a contributor instead of consumer. The existing methods to report/fight injustices are slow, expensive, inaccessible. Authority is no longer above questioning and I'd like to build a platform that enables just that.
