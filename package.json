@@ -9,7 +9,7 @@
     "start": "NODE_ENV=production node dist/index.js",
     "app": "parcel index.html -p 8080 --open --no-source-maps",
     "server": "parcel watch server/server.tsx --target=node --out-file=server.js --no-source-maps | nodemon dist/server.js",
-    "build": "parcel build app/app.tsx"
+    "build": "parcel build index.html --experimental-scope-hoisting"
   },
   "author": "Phillip Malboeuf<phil@boeuf.coffee>",
   "devDependencies": {
