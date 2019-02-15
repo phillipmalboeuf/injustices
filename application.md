@@ -37,7 +37,7 @@ It's still much a work in progress, but here's what I have so far: https://injus
 
 ##Answer the following if you have revenue:
 ##What is your monthly recurring revenue (MRR)?
-No revenue, I do have a micro-donation-based revenue model that I'd love to discuss with you.
+No revenue just yet, I do have a micro-donation-based revenue model that I'd love to discuss with you if you're interested.
 
 ##What is your monthly growth rate for the past 12 months (%)?
 -
@@ -56,10 +56,10 @@ No revenue, I do have a micro-donation-based revenue model that I'd love to disc
 
 #MARKET
 ##What is your unfair advantage? *
-My unfair advantage is that I don't have an agenda, I'm not emotionnaly or politically invested. I want to this for me to be able to give back. I perform all work in the spirit of service.
+My unfair advantage is that I don't have an agenda, I'm not emotionally or politically invested. My only motivation is to be able to give back. I perform all work in the spirit of service.
 
 ##What do you understand about the industry you’re selling to that few others do? *
-On top of my day job as a full-stack web developer, I understand the practices of anonimity on the internet and I'm also a well-versed user experience designer. Having a combination of those skills is rare.
+On top of my day job as a full-stack web developer, I understand the practices of anonymity on the internet and I'm also a well-versed user experience designer. Having a combination of those skills is rare.
 
 I also understand that there's a revolution underway, that trust in the established order is crumbling.
 
@@ -81,8 +81,8 @@ Sorry, I'm honestly uncertain as to how to proceed to evaluate that market.
 Reddit (e.g. https://www.reddit.com/r/JusticeServed/)
 News sites (e.g. https://theintercept.com)
 
-I fear Reddit, because it has been the origin of mob justice, always emotional and reactive... and sometimes violent.
-I don't fear news site because they're losing the trust of their readers steadily and irrepairably, their biases and self-interests are showing their seams.
+I fear Reddit, because it has been the origin point of mob justice, always emotional and reactive... and sometimes violent.
+I don't fear news site because they're losing the trust of their readers steadily and irreparably, their biases and self-interests are showing their seams.
 
 ##What has changed such that right now is a good time for your business? *
 The public is done tolerating injustices and it's asking itself what it can do to make a difference, to be a contributor instead of consumer. The existing methods to report/fight injustices are slow, expensive, inaccessible. Authority is no longer above questioning and I'd like to build a platform that enables just that.
