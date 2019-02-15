@@ -78,11 +78,11 @@ My ideal customer is studious and diligent, unafraid, and has suffered greatly a
 Sorry, I'm honestly uncertain as to how to proceed to evaluate that market.
 
 ##Who are your competitors? Of your competitors, who do you fear the most? Whom do you fear the least? *
-Reddit (https://www.reddit.com/r/JusticeServed/)
-News sites
+Reddit (e.g. https://www.reddit.com/r/JusticeServed/)
+News sites (e.g. https://theintercept.com)
 
 I fear Reddit, because it has been the origin of mob justice, always emotional and reactive... and sometimes violent.
-I don't fear news site because they're losing the trust of their readers steadily and irrepairably.
+I don't fear news site because they're losing the trust of their readers steadily and irrepairably, their biases and self-interests are showing their seams.
 
 ##What has changed such that right now is a good time for your business? *
 The public is done tolerating injustices and it's asking itself what it can do to make a difference, to be a contributor instead of consumer. The existing methods to report/fight injustices are slow, expensive, inaccessible. Authority is no longer above questioning and I'd like to build a platform that enables just that.
