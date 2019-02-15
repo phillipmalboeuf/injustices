@@ -32,7 +32,7 @@ export class Footer extends React.Component<Props, State> {
               <a href='/terms' className='underline'>Terms</a>
             </div>
             <div className='col'>
-              <a href='/contact' className='underline'>Contact</a>
+              <a href='mailto:phil@phils.computer' className='underline'>Contact</a>
             </div>
           </div>
         </div>
