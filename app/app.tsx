@@ -9,10 +9,14 @@ import { AnonymousCredential } from 'mongodb-stitch-core-sdk'
 import { Routes } from './routes'
 import { client } from './clients/stitch'
 
-client.auth
-  .loginWithCredential(new AnonymousCredential())
-  .then(credential => 
-    ReactDOM.render(<BrowserRouter>
-      <Routes />
-    </BrowserRouter>, document.getElementById('main'))
-  )
+ReactDOM.render(<BrowserRouter>
+  <Routes />
+</BrowserRouter>, document.getElementById('main'))
+
+// client.auth
+//   .loginWithCredential(new AnonymousCredential())
+//   .then(credential => 
+//     ReactDOM.render(<BrowserRouter>
+//       <Routes />
+//     </BrowserRouter>, document.getElementById('main'))
+//   )

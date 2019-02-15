@@ -26,7 +26,7 @@ export class Header extends React.Component<Props, State> {
         <div className='col'>
           <div className='grid grid--guttered'>
             <div className='col'>
-              <a href='/contact' className='underline'>Contact</a>
+              <a href='mailto:phil@phils.computer' className='underline' target='_blank'>Contact</a>
             </div>
           </div>
         </div>

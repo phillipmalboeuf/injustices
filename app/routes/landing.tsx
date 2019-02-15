@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { Button } from '../components/button'
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 // import Case from '../models/case'
 // import { Properties } from '../models/_model'
@@ -26,10 +27,12 @@ export class Landing extends React.Component<Props, State> {
   componentDidMount() {
   }
 
+  
+
   public render() {
     return <>
       <div className='black_back padded padded--thick padded--big_top padded--flat_bottom text_center'>
-        <h1><Overlaps size='13vw'>injustices.wiki</Overlaps></h1>
+        <h1 style={{ position: 'relative', top: 2 }}><Overlaps size='13vw' phoneSize='14vw'>injustices.wiki</Overlaps></h1>
       </div>
 
       <div className='padded padded--thick'>
@@ -48,49 +51,55 @@ export class Landing extends React.Component<Props, State> {
       </div>
 
       <div className='padded padded--thick relative black_back' id='1'>
-        <div className='grid grid--guttered grid--bottom'>
-          <div className='col col--2of12'>
-            <Overlaps size='20vw' position={{ bottom: 0, left: '2rem' }}>1</Overlaps>
+        <div className='grid grid--guttered grid--middle'>
+          <div className='col col--2of12 col--tablet_portrait--9of12 col--phone--12of12'>
+            <Overlaps size='18rem' phoneSize='12rem' position={css`bottom: 0; left: 2rem;`}>1</Overlaps>
           </div>
-          <div className='col col--3of12 col--phone--12of12'>
+          <div className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--9of12 col--phone--12of12'>
             <h2>Read and classify cases</h2>
             <p>Awareness goes a long way. We're here to bring to light and study injustices.</p>
             <p>We’ll need help with the tagging, the pushing forward, and pulling down of cases.</p>
           </div>
-          <div className='col col--6of12'></div>
+          <div className='col col--6of12 col--tablet_portrait--9of12 col--phone--12of12'>
+            <Screenshot><img src='https://montrealuploads.imgix.net/injustices/ijwk_cases_screen.png?auto=format,compress' alt=''/></Screenshot>
+          </div>
         </div>
       </div>
 
       <div className='padded padded--thick relative' id='2'>
-        <div className='grid grid--guttered grid--bottom'>
-          <div className='col col--2of12'>
-            <Overlaps size='20vw' position={{ bottom: 0, left: '2rem' }}>2</Overlaps>
+        <div className='grid grid--guttered grid--middle'>
+          <div className='col col--2of12 col--tablet_portrait--9of12 col--phone--12of12'>
+            <Overlaps size='18rem' phoneSize='12rem' position={css`bottom: 0; left: 2rem;`}>2</Overlaps>
           </div>
-          <div className='col col--3of12 col--phone--12of12'>
+          <div className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--9of12 col--phone--12of12'>
             <h2>Contribute to a case</h2>
             <p>Donate anything. Any amount of your time, your resources, or even your funds may pull someone out of a dire situation.</p>
             <p>We, the small, have to opportunity to both provide and receive help.</p>
           </div>
-          <div className='col col--6of12'></div>
+          <div className='col col--6of12 col--tablet_portrait--9of12 col--phone--12of12'>
+            <Screenshot><img src='https://montrealuploads.imgix.net/injustices/ijwk_case_screen.png?auto=format,compress' alt=''/></Screenshot>
+          </div>
         </div>
       </div>
 
       <div className='padded padded--thick relative black_back' id='3'>
-        <div className='grid grid--guttered grid--bottom'>
-          <div className='col col--2of12'>
-            <Overlaps size='20vw' position={{ bottom: 0, left: '2rem' }}>3</Overlaps>
+        <div className='grid grid--guttered grid--middle'>
+          <div className='col col--2of12 col--tablet_portrait--9of12 col--phone--12of12'>
+            <Overlaps size='18rem' phoneSize='12rem' position={css`bottom: 0; left: 2rem;`}>3</Overlaps>
           </div>
-          <div className='col col--3of12 col--phone--12of12'>
+          <div className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--9of12 col--phone--12of12'>
             <h2>Open a case yourself</h2>
             <p>This is a safe place to speak up. We’ll provide any level of anonimity you need. We’re here to remove fear paralysis.</p>
             <p>Start with the beginning and build on it as you go, there’s no such thing as a complete or perfect case.</p>
           </div>
-          <div className='col col--6of12'></div>
+          <div className='col col--6of12 col--tablet_portrait--9of12 col--phone--12of12'>
+            <Screenshot><img src='https://montrealuploads.imgix.net/injustices/ijwk_new_case_screen.png?auto=format,compress' alt=''/></Screenshot>
+          </div>
         </div>
       </div>
 
       <div className='padded padded--thick text_center relative'>
-        <Overlaps size='18vw' position={{ bottom: 0, left: 0, width: '100%' }}>Finally</Overlaps>
+        <Overlaps size='18rem' phoneSize='33vw' position={css`bottom: 0; left: 0; width: 100%;`}>Finally</Overlaps>
         <Button label={'Get involved'} />
       </div>
     </>
@@ -99,14 +108,41 @@ export class Landing extends React.Component<Props, State> {
 
 interface OverlapsProps {
   size: string,
-  position?: { top?: string | number, right?: string | number, bottom?: string | number, left?: string | number, width?: string }
+  phoneSize?: string,
+  position?: FlattenSimpleInterpolation
 }
 
-const Overlaps: React.SFC<OverlapsProps> = (props) => {
-  return <em style={{
-    fontSize: props.size,
-    textDecoration: 'underline',
-    lineHeight: 1,
-    ...(props.position ? { position: 'absolute', ...props.position } : {})
-  }}>{props.children}</em>
-}
+const Overlaps = styled.em`
+  display: inline-block;
+  margin-bottom: -0.1333em;
+  line-height: 1;
+
+  ${(props: OverlapsProps)=> css`
+    font-size: ${props.size};
+
+    ${props.phoneSize && css`
+      @media (max-width: 900px) { font-size: ${props.phoneSize}; }
+    `}
+
+    ${props.position && css`
+      position: absolute;
+      ${props.position}
+    `}
+  `}
+`
+
+interface ScreenshotProps {}
+
+const Screenshot = styled.div`
+  padding: 2rem;
+  margin-top: -3vw;
+  margin-bottom: -4vw;
+
+  ${(props: ScreenshotProps)=> css`
+    @media (max-width: 900px) {
+      padding: 0;
+      margin-top: 1rem;
+      margin-bottom: 10rem;
+    }
+  `}
+`
