@@ -139,6 +139,10 @@ const Screenshot = styled.div`
   margin-bottom: -4vw;
 
   ${(props: ScreenshotProps)=> css`
+    @media (max-width: 1200px) {
+      padding: 1rem;
+    }
+
     @media (max-width: 900px) {
       padding: 0;
       margin-top: 1rem;
