@@ -1,6 +1,5 @@
 
 import { db } from '../clients/stitch'
-import { ObjectID } from 'bson'
 
 export interface Properties {
   [key: string]: any
@@ -17,11 +16,11 @@ export default class Model {
   static collection: string = 'models'
   static sort: Sort = {}
 
-  static preprocess(data: any): Promise<any> {
+  static preprocess(data: any): Promise<Properties> {
     return Promise.resolve(data)
   }
 
-  static postprocess(data: any): Promise<any> {
+  static postprocess(data: any): Promise<Properties> {
     return Promise.resolve(data)
   }
 
@@ -34,6 +33,24 @@ export default class Model {
     return db.collection(this.collection).find(filters)
       .iterator()
       .then(cursor => cursor.next().then((model: Properties)=> this.postprocess(model)))
+  }
+
+  static async insertOne(properties: Properties): Promise<Properties> {
+    return db.collection(this.collection).insertOne(await this.preprocess(properties))
+      .then(result => ({ _id: result.insertedId }))
+  }
+
+  static async updateOne(filters: Filters, properties: Properties): Promise<Properties> {
+    return this.postprocess(await db.collection(this.collection).updateOne(filters, await this.preprocess(properties)))
+  }
+
+  static watch(filters: Filters) {
+    return db.collection(this.collection).watch(filters ? [{ '$match': filters }] : [])
+  }
+
+  static destroy_where(filters: Filters): Promise<{deleted: number}> {
+    return db.collection(this.collection).deleteOne(filters)
+      .then(result => ({ deleted: result.deletedCount }))
   }
 
   // public _id : string

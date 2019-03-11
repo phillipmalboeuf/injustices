@@ -1,9 +1,10 @@
 
-import * as React from 'react'
+import React from 'react'
 import { FormContext } from './form'
 
 interface Props {
   name: string,
+  placeholder?: string,
   value?: any,
   type?: string,
   label?: string,
@@ -18,6 +19,7 @@ export const Input: React.SFC<Props> = (props) => {
     {(context) => <>
       {props.label && <label key="label" htmlFor={props.name}>{props.label}{props.optional ? " (Optional)" : "" }</label>}
       <input name={props.name} id={props.name}
+        placeholder={props.placeholder}
         type={props.type ? props.type : 'text'}
         defaultValue={props.value}
         required={props.optional ? false : true}
@@ -25,7 +27,7 @@ export const Input: React.SFC<Props> = (props) => {
         autoFocus={props.autoFocus ? true : false}
         autoComplete={props.type == "password" && props.newPassword ? "new-password" : props.type == "search" ? "off" : null}
         step={props.type == "number" ? "any" : null}
-        onChange={context.onChange} />
+        onChange={e => context.onChange(props.name, e.currentTarget.value)} />
     </>}
   </FormContext.Consumer>
 }

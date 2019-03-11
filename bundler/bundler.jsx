@@ -7,7 +7,6 @@ import { StaticRouter } from 'react-router'
 
 import { Routes } from '../app/routes'
 
-
 const entries = Path.join(__dirname, '../../*.html')
 const bundler = new Bundler(entries, {
   contentHash: true,

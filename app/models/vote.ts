@@ -2,5 +2,5 @@
 import Model from './_model'
 
 export default class Vote extends Model {
-  static endpoint = 'votes'
+  static collection = 'votes'
 }

@@ -1,9 +1,9 @@
 
-import * as React from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 interface Props {
-  label: string,
+  label: string | JSX.Element,
   to?: string,
   disabled?: boolean,
   big?: boolean,

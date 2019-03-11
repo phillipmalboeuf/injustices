@@ -1,5 +1,5 @@
 
-import * as React from 'react'
+import React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { Button } from '../components/button'
 
@@ -23,10 +23,6 @@ export class PeopleView extends React.Component<Props, State> {
       people: props.people,
       cases: props.cases || []
     }
-
-    let people = new People({_id: this.props.match.params._id})
-    people.fetch().then(people => this.setState({ people }))
-    people.cases().then(cases => this.setState({ cases }))
   }
 
   componentDidMount() {

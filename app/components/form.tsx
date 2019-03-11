@@ -1,24 +1,24 @@
 
 
-import * as React from 'react'
+import React from 'react'
 import { Redirect } from 'react-router-dom'
 
+
 export const FormContext = React.createContext({
-  // values: {} as { [key:string]: any },
+  values: {} as { [key:string]: any },
   onChange: function(name: string, value: any): void {},
 })
 
 
-import Model from '../models/_model'
-
 interface Props {
-  // model: Model,
   cta?: string,
-  onSubmit?: (values: { [key:string]: any })=> Promise<any>
+  onSubmit: (values: { [key:string]: any })=> Promise<string | JSX.Element>
 }
 interface State {
   values: { [key:string]: any },
-  // model: Model
+  waiting: boolean,
+  response?: string | JSX.Element,
+  error?: string | JSX.Element
 }
 
 export class Form extends React.Component<Props, State> {
@@ -27,42 +27,47 @@ export class Form extends React.Component<Props, State> {
     super(props)
     this.state = {
       values: {},
-      // model: props.model
+      waiting: false
     }
   }
 
-  onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    this.props.onSubmit && this.props.onSubmit(this.state.values)
+    this.setState({
+      waiting: true,
+      error: undefined
+    })
 
-    // this.state.model.save(this.state.values)
-    //   .then(model => this.setState({ 
-    //     values: {},
-    //     model: model
-    //   }))
+    this.props.onSubmit(this.state.values).then(response => this.setState({
+        response,
+        waiting: false
+      })).catch(error => this.setState({
+        error: error.message,
+        waiting: false
+      }))
   }
 
-  onChange(e: React.ChangeEvent<HTMLInputElement>) {
-    let value: any = e.currentTarget.value
-    if (e.currentTarget.type === 'checkbox') {
-      value = e.currentTarget.checked
-    }
-
+  onChange(name: string, value: any) {
     this.setState({
       values : {
         ...this.state.values,
-        [e.currentTarget.name]: value
+        [name]: value
       }
     })
   }
 
   public render() {
-    return <form onSubmit={this.onSubmit.bind(this)}>
-      <FormContext.Provider value={{onChange: this.onChange.bind(this)}}>
+    return this.state.response
+    ? this.state.response
+    : <form onSubmit={this.onSubmit.bind(this)}>
+      <FormContext.Provider value={{
+        onChange: this.onChange.bind(this),
+        values: this.state.values
+      }}>
         {this.props.children}
       </FormContext.Provider>
-      <button className='normal_top' type='submit' disabled={Object.keys(this.state.values).length === 0}>{this.props.cta || 'Save'}</button>
-      {/* {this.state.model._id && <Redirect push to={`/${this.state.model.constructor.endpoint}/${this.state.model._id}`} />} */}
+      {this.state.error && <div className='alert'>{this.state.error}</div>}
+      <button className='normal_top button--full' type='submit' disabled={this.state.waiting}>{this.state.waiting ? 'One moment...' : this.props.cta || 'Save'}</button>
     </form>
   }
 }

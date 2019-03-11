@@ -1,5 +1,9 @@
 
+// #FORM
 
+form {
+  margin-bottom: $vertical_rythm;
+}
 
 // #LABELS
 
@@ -10,8 +14,9 @@ label,
   display: block;
 
   color: inherit;
+  font-family: $alternate_font;
   font-size: $small_size;
-  font-weight: $normal_weight;
+  font-weight: $bold_weight;
   letter-spacing: $letter_spacing;
 
   margin-bottom: $vertical_rythm/6;
@@ -57,9 +62,9 @@ textarea,
 
   color: $black;
   background: transparent;
-  padding: $vertical_rythm/2;
+  padding: $vertical_rythm/1.33 $vertical_rythm;
   // margin-bottom: $vertical_rythm/2;
-  border: 1px solid $grey;
+  border: 1px solid $grey--dark;
   border-radius: $border_radius;
 
   &:active {
@@ -77,7 +82,7 @@ textarea,
 
   &:focus {
     color: $black--dark;
-    border-color: $grey--dark;
+    border-color: $black;
   }
 
   &.input--tight {

@@ -1,8 +1,14 @@
 
-import * as React from 'react'
+import React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
-import { Button } from '../components/button'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
+
+import Email from '../models/email'
+
+import { Button } from '../components/button'
+import { Overlay } from '../components/overlay'
+import { Form } from '../components/form'
+import { Input } from '../components/input'
 
 // import Case from '../models/case'
 // import { Properties } from '../models/_model'
@@ -17,6 +23,8 @@ interface State {
 
 export class Landing extends React.Component<Props, State> {
 
+  private overlay: Overlay
+
   constructor(props: Props) {
     super(props)
     this.state = {
@@ -27,7 +35,9 @@ export class Landing extends React.Component<Props, State> {
   componentDidMount() {
   }
 
-  
+  private involved() {
+    this.overlay.toggle()
+  }
 
   public render() {
     return <>
@@ -46,7 +56,7 @@ export class Landing extends React.Component<Props, State> {
             <li><a href='#2' className='underline'>Contribute to a case</a></li>
             <li><a href='#3' className='underline'>Open a case yourself</a></li>
           </ol>
-          <Button label={'Get involved'} />
+          <Button onClick={e => this.involved()} label={'Get involved'} />
         </div>
       </div>
 
@@ -100,8 +110,19 @@ export class Landing extends React.Component<Props, State> {
 
       <div className='padded padded--thick text_center relative'>
         <Overlaps size='18rem' phoneSize='33vw' position={css`bottom: 0; left: 0; width: 100%;`}>Finally</Overlaps>
-        <Button label={'Get involved'} />
+        <Button onClick={e => this.involved()} label={'Get involved'} />
       </div>
+
+      <Overlay ref={overlay => this.overlay = overlay}>
+        <h2>Get involved</h2>
+        <p>The injustices.wiki project is still very much in development. If you'd like to be kept updated, please leave us you're email address here.</p>
+
+        <Form cta={'Send'} onSubmit={values => Email.insertOne(values).then(response => <p><em>Thank you, you'll hear from us soon!</em></p>)}>
+          <Input name='email' type='email' label='Email address' placeholder='your.email@domain.tld' />
+        </Form>
+
+        <p><em>Alternatively,</em><br/>Follow us on <a href='' className='underline' target='_blank'>Twitter</a> or join our <a href='' className='underline' target='_blank'>Discord</a>.</p>
+      </Overlay>
     </>
   }
 }
