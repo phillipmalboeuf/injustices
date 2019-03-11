@@ -2,6 +2,7 @@
 /.sass-cache
 /.cache
 /dist
+/bundler/dist
 /_ignore
 package-lock.json
 npm-debug.log
