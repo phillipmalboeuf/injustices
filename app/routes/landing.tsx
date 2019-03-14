@@ -21,7 +21,7 @@ interface State {
   // cases: Properties[]
 }
 
-export class Landing extends React.Component<Props, State> {
+export class Landing extends React.PureComponent<Props, State> {
 
   private overlay: Overlay
 
@@ -99,7 +99,7 @@ export class Landing extends React.Component<Props, State> {
           </div>
           <div className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--9of12 col--phone--12of12'>
             <h2>Open a case yourself</h2>
-            <p>This is a safe place to speak up. We’ll provide any level of anonimity you need. We’re here to remove fear paralysis.</p>
+            <p>This is a safe place to speak up. We’ll provide any level of anonymity you need. We’re here to remove fear paralysis.</p>
             <p>Start with the beginning and build on it as you go, there’s no such thing as a complete or perfect case.</p>
           </div>
           <div className='col col--6of12 col--tablet_portrait--9of12 col--phone--12of12'>
