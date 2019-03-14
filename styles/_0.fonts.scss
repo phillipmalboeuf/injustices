@@ -4,6 +4,7 @@
     src: url('./fonts/UntitledSerifTest-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
     src: url('./fonts/UntitledSerifTest-Medium.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -18,6 +20,7 @@
     src: url('./fonts/FoundersGrotTest-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -25,4 +28,5 @@
     src: url('./fonts/FoundersGrotTest-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
