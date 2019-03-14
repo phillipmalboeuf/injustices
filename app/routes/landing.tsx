@@ -36,6 +36,7 @@ export class Landing extends React.PureComponent<Props, State> {
   }
 
   private involved() {
+    mixpanel.track('Get Involved')
     this.overlay.toggle()
   }
 
@@ -121,7 +122,7 @@ export class Landing extends React.PureComponent<Props, State> {
           <Input name='email' type='email' label='Email address' placeholder='your.email@domain.tld' />
         </Form>
 
-        <p><em>Alternatively,</em><br/>Follow us on <a href='' className='underline' target='_blank'>Twitter</a> or join our <a href='' className='underline' target='_blank'>Discord</a>.</p>
+        <p><em>Alternatively,</em><br/>Follow us on <a href='https://twitter.com/injusticeswiki' className='underline' target='_blank'>Twitter</a> or join our <a href='https://discord.gg/Rk6JWDb' className='underline' target='_blank'>Discord</a>.</p>
       </Overlay>
     </>
   }

@@ -12,6 +12,16 @@ import { client } from './clients/stitch'
 
 console.log('Injustices.wiki')
 
+declare global {
+  const mixpanel: {
+    track: (event: string, data?: any) => void,
+    identify: (id: string) => void,
+    people: {
+      set: (data: any) => void
+    }
+  }
+}
+
 
 const app = <BrowserRouter>
   <Routes />
@@ -20,7 +30,8 @@ const app = <BrowserRouter>
 
 client.auth
   .loginWithCredential(new AnonymousCredential())
-  .then(credential => 
+  .then(credential => mixpanel.identify(credential.id))
+  .then(() => 
     process.env.NODE_ENV === 'production'
       ? hydrate(app, document.getElementById('main'))
       : render(app, document.getElementById('main'))
