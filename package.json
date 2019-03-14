@@ -9,7 +9,8 @@
     "start": "NODE_ENV=production node dist/index.js",
     "app": "parcel index.html -p 8080 --open --no-source-maps",
     "server": "parcel watch server/server.tsx --target=node --out-file=server.js | nodemon dist/server.js",
-    "build": "parcel build bundler/bundler.jsx -d bundler/dist/ --target=node && NODE_ENV=production node bundler/dist/bundler.js"
+    "build": "parcel build index.html --experimental-scope-hoisting",
+    "bundle": "parcel build bundler/bundler.jsx -d bundler/dist/ --target=node && NODE_ENV=production node bundler/dist/bundler.js"
   },
   "author": "Phillip Malboeuf<phil@boeuf.coffee>",
   "devDependencies": {
@@ -45,8 +46,8 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "jsonschema": "^1.2.4",
-    "mongodb-stitch-browser-core": "^4.3.1",
-    "mongodb-stitch-browser-services-mongodb-remote": "^4.3.1",
+    "mongodb-stitch-browser-core": "^4.3.2",
+    "mongodb-stitch-browser-services-mongodb-remote": "^4.3.2",
     "morgan": "^1.9.1",
     "nconf": "^0.10.0",
     "query-string": "^6.2.0",
