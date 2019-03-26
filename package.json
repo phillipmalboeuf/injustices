@@ -10,7 +10,8 @@
     "app": "parcel index.html -p 8080 --open --no-source-maps",
     "server": "parcel watch server/server.tsx --target=node --out-file=server.js | nodemon dist/server.js",
     "build": "parcel build index.html --experimental-scope-hoisting",
-    "bundle": "parcel build bundler/bundler.jsx -d bundler/dist/ --target=node && NODE_ENV=production node bundler/dist/bundler.js"
+    "bundle": "parcel build bundler/bundler.jsx -d bundler/dist/ --target=node && NODE_ENV=production node bundler/dist/bundler.js",
+    "now": "now ./dist --local-config ../now.json && now alias --local-config ../now.json"
   },
   "author": "Phillip Malboeuf<phil@boeuf.coffee>",
   "devDependencies": {
@@ -31,7 +32,8 @@
     "@types/stripe": "^6.0.4",
     "@types/styled-components": "^4.1.10",
     "nodemon": "^1.18.9",
-    "parcel-bundler": "^1.12.0",
+    "now": "^14.1.0",
+    "parcel-bundler": "^1.12.3",
     "sass": "^1.15.3",
     "typescript": "^3.2.2"
   },
