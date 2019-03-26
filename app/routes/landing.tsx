@@ -9,6 +9,7 @@ import { Button } from '../components/button'
 import { Overlay } from '../components/overlay'
 import { Form } from '../components/form'
 import { Input } from '../components/input'
+import Event from '../models/event'
 
 // import Case from '../models/case'
 // import { Properties } from '../models/_model'
@@ -36,7 +37,7 @@ export class Landing extends React.PureComponent<Props, State> {
   }
 
   private involved() {
-    mixpanel.track('Get Involved')
+    Event.track('Get Involved')
     this.overlay.toggle()
   }
 

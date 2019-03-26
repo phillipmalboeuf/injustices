@@ -9,17 +9,12 @@ import { AnonymousCredential } from 'mongodb-stitch-core-sdk'
 import { Routes } from './routes'
 import { client } from './clients/stitch'
 
+import Session from './models/session'
+
 
 console.log('Injustices.wiki')
 
 declare global {
-  const mixpanel: {
-    track: (event: string, data?: any) => void,
-    identify: (id: string) => void,
-    people: {
-      set: (data: any) => void
-    }
-  }
 }
 
 
@@ -30,7 +25,9 @@ const app = <BrowserRouter>
 
 client.auth
   .loginWithCredential(new AnonymousCredential())
-  .then(credential => mixpanel.identify(credential.id))
+  .then(credential => {
+    Session.start()
+  })
   .then(() => 
     process.env.NODE_ENV === 'production'
       ? hydrate(app, document.getElementById('main'))

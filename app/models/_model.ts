@@ -17,7 +17,10 @@ export default class Model {
   static sort: Sort = {}
 
   static preprocess(data: any): Promise<Properties> {
-    return Promise.resolve(data)
+    return Promise.resolve({
+      ...data,
+      created_at: new Date()
+    })
   }
 
   static postprocess(data: any): Promise<Properties> {
