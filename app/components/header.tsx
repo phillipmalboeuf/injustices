@@ -2,6 +2,8 @@
 import React from 'react'
 import { Button } from '../components/button'
 
+import Event from '../models/event'
+
 
 interface Props {}
 interface State {}
@@ -26,7 +28,7 @@ export class Header extends React.Component<Props, State> {
         <div className='col'>
           <div className='grid grid--guttered'>
             <div className='col'>
-              <a href='mailto:phil@phils.computer' className='underline' target='_blank'>Contact</a>
+              <a onClick={e => Event.track('Contact Click')} href='mailto:phil@phils.computer' className='underline' target='_blank'>Contact</a>
             </div>
           </div>
         </div>

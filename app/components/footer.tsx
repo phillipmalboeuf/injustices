@@ -2,6 +2,8 @@
 import React from 'react'
 import { Button } from '../components/button'
 
+import Event from '../models/event'
+
 
 interface Props {}
 interface State {}
@@ -26,13 +28,13 @@ export class Footer extends React.Component<Props, State> {
         <div className='col'>
           <div className='grid grid--guttered'>
             <div className='col'>
-              <a href='/developers' className='underline'>Developers</a>
+              <a onClick={e => Event.track('Developers Click')} href='/developers' className='underline'>Developers</a>
             </div>
             <div className='col'>
-              <a href='/terms' className='underline'>Terms</a>
+              <a onClick={e => Event.track('Terms Click')} href='/terms' className='underline'>Terms</a>
             </div>
             <div className='col'>
-              <a href='mailto:phil@phils.computer' className='underline'>Contact</a>
+              <a onClick={e => Event.track('Contact Click')} href='mailto:phil@phils.computer' className='underline'>Contact</a>
             </div>
           </div>
         </div>

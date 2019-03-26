@@ -123,7 +123,7 @@ export class Landing extends React.PureComponent<Props, State> {
           <Input name='email' type='email' label='Email address' placeholder='your.email@domain.tld' />
         </Form>
 
-        <p><em>Alternatively,</em><br/>Follow us on <a href='https://twitter.com/injusticeswiki' className='underline' target='_blank'>Twitter</a> or join our <a href='https://discord.gg/Rk6JWDb' className='underline' target='_blank'>Discord</a>.</p>
+        <p><em>Alternatively,</em><br/>Follow us on <a onClick={e => Event.track('Twitter Click')} href='https://twitter.com/injusticeswiki' className='underline' target='_blank'>Twitter</a> or join our <a onClick={e => Event.track('Discord Click')} href='https://discord.gg/Rk6JWDb' className='underline' target='_blank'>Discord</a>.</p>
       </Overlay>
     </>
   }
