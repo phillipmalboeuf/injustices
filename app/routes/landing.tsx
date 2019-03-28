@@ -4,12 +4,12 @@ import { Link, RouteComponentProps } from 'react-router-dom'
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import Email from '../models/email'
+import Event from '../models/event'
 
 import { Button } from '../components/button'
 import { Overlay } from '../components/overlay'
 import { Form } from '../components/form'
 import { Input } from '../components/input'
-import Event from '../models/event'
 
 // import Case from '../models/case'
 // import { Properties } from '../models/_model'

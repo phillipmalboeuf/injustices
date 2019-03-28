@@ -14,7 +14,7 @@ export interface Sort {
 export default class Model {
 
   static collection: string = 'models'
-  static sort: Sort = {}
+  static sort: Sort = undefined
 
   static preprocess(data: any): Promise<Properties> {
     return Promise.resolve({
@@ -27,8 +27,8 @@ export default class Model {
     return Promise.resolve(data)
   }
 
-  static list(filters: Filters=undefined, limit=50, page=0, sort?: Sort): Promise<Properties[]> {
-    return db.collection(this.collection).find(filters, { limit, skip: limit ? page * limit : 0, sort: sort || this.sort }).toArray()
+  static list(filters: Filters=undefined, limit: number=undefined, page=0, sort?: Sort): Promise<Properties[]> {
+    return db.collection(this.collection).find(filters, { limit, sort: sort || this.sort }).toArray()
       .then((models: Properties[]) => Promise.all(models.map(model => this.postprocess(model))))
   }
 
@@ -44,7 +44,7 @@ export default class Model {
   }
 
   static async updateOne(filters: Filters, properties: Properties): Promise<Properties> {
-    return this.postprocess(await db.collection(this.collection).updateOne(filters, await this.preprocess(properties)))
+    return this.postprocess(await db.collection(this.collection).findOneAndUpdate(filters, await this.preprocess(properties)))
   }
 
   static watch(filters: Filters) {

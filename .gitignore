@@ -7,3 +7,5 @@
 package-lock.json
 npm-debug.log
 secret.json
+/cypress/videos
+/cypress/screenshots
